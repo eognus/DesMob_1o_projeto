@@ -13,11 +13,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'yellow',
         margin: '20px',
         alignItems: 'center',
-        flexDirection: "row"
+        flexDirection: "row",
+        justifyContent: 'space-around',
+        maxWidth: '90%'
     },
     txtTitulo: {
-        marginTop: '20px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontSize: '25px'
     },
     btncomprar: {
         border: '1px solid #000',
@@ -27,17 +29,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         maxWidth: '300px',
         width: "80%",
+        height: '20px'
     },
     sinopse : {
-        marginVertical: '50px',
-        flexWrap: 'wrap',
-        position: 'relative'
+        
     },
     descricao: {
         flexDirection: 'column',
         width: '60%',
         paddingLeft: '30px',
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent: 'space-around',
+        height: '80%'
     }
 })
 
