@@ -8,15 +8,16 @@ export default function App() {
   let [ filmes, setFilmes ] = useState([]);
 
   useEffect(function(){
-    fetch('https://api.otaviolube.com/api/filmes').then( resultado => console.log("aq") )
+    fetch('https://api.otaviolube.com/api/filmes?populate=*').then( resultado => resultado.json()
+     ).then( objeto => {setFilmes(objeto.data); console.log(objeto)})
   }, [])
+
 
   return (
     
-    <ScrollView style={styles.container}>
-      {filmes.lenght > 0 ?
-      filmes.map(filme =><CartaoFilme key={filme.id}
-      filme={filme.attributes} />) 
+    <ScrollView contentContainerStyle={styles.container}>
+      {filmes.length > 0 ?
+      filmes.map(filme =><CartaoFilme key={filme.id} filme={filme.attributes} />) 
 
       : <ActivityIndicator size={'large'} />}
 
@@ -28,6 +29,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
-  },
+    backgroundColor: 'red'
+  }
 });
